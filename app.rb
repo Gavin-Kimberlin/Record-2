@@ -14,6 +14,12 @@ get ('/albums') do
   erb(:albums)
 end
 
+get ('/albums/all') do
+  @albums = Album.all
+  @sold = Album.all_sold
+  erb(:albums)
+end
+
 get ('/albums/new') do
   erb(:new_album)
 end
@@ -23,10 +29,21 @@ get ('/albums/:id') do
   erb(:album)
 end
 
-# get ('/albums?name') do
-#   @album = Album.fetch(name)
-#   erb(:album)
-# end
+get ('/albums/search') do
+  erb(:search)
+end
+
+post ('/albums/:id/sold') do
+  @album = Album.find(params[:id].to_i())
+  @album.sold()
+  erb(:purchased)
+end
+
+post ('/albums/search') do
+  search_term = params[:search]
+  @albums = Album.search(search_term)
+  erb(:albums)
+end
 
 post ('/albums') do
   name = params[:album_name]

@@ -5,8 +5,25 @@
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
   </head>
   <body>
+    <div class="menu-main-menu-container">
+              <ul id="menu-main-menu" class="menu">
+                <li id="menu-item" class="menu-item">
+                  <a href="/">Home</a>
+                </li>
+                <li id="menu-item" class="menu-item">
+                  <a href="/albums/search">Search Avalible</a>
+                </li>
+                <li id="menu-item" class="menu-item">
+                  <a href="/albums/all">View All</a>
+                </li>
+                <li id="menu-item" class="menu-item">
+                  <a href="/albums/new">New Alububmbmsz</a>
+                </li>
+              </ul>
+          </div>
     <div class="container">
       <%= yield %>
     </div>
   </body>
 </html>
+<!-- https://stackoverflow.com/questions/23432982/how-to-use-sinatra-to-highlight-navigation-menu-when-on-current-page -->
